@@ -6,7 +6,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="cloud"
-ZSH_THEME="half-life"
+ZSH_THEME="garyblessington"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -85,12 +85,6 @@ export LANG=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias  t="tmux"
-alias  tls="tmux ls"
-alias  tkss="tmux kill-session -t"
-alias  tksv="tmux kill-server"
-alias  ta="tmux attach -t"
-
 alias vi=emacs
 alias vim=emacs
 
@@ -123,3 +117,22 @@ if [[ -r /usr/local/bin/virtualenvwrapper.sh ]]; then
 else
     echo "WARNING: Can't find virtualenvwrapper.sh"
 fi
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+#
+# homebrew
+#
+export PATH="/usr/local/sbin:$PATH"
+
+#
+# Docker
+#
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/geekerzp/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
+
+#
+# Rust
+#
+export RUST_SRC_PATH=/usr/local/src/rust/src
