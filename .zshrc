@@ -136,3 +136,14 @@ export DOCKER_TLS_VERIFY=1
 # Rust
 #
 export RUST_SRC_PATH=/usr/local/src/rust/src
+
+#
+# Fortune
+#
+echo
+echo "========================= Quote Of The Day ============================"
+echo
+fortune
+echo
+echo "======================================================================="
+echo
