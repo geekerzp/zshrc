@@ -46,7 +46,7 @@ ZSH_THEME="garyblessington"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rails rake ruby rbenv gem github python brew taskwarrior)
+plugins=(git rails rake ruby rbenv gem github python brew taskwarrior mvn bower)
 
 # User configuration
 
@@ -88,11 +88,13 @@ export LANG=en_US.UTF-8
 alias vi=emacs
 alias vim=emacs
 
+
 #
 # rbenv
 #
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
 
 export TERM=xterm-256color
 
@@ -117,6 +119,7 @@ if [[ -r /usr/local/bin/virtualenvwrapper.sh ]]; then
 else
     echo "WARNING: Can't find virtualenvwrapper.sh"
 fi
+
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
@@ -158,3 +161,15 @@ function start_qujing {
   export http_proxy='http://theironislands.f.getqujing.net:31680'
   export HTTPS_PROXY='http://theironislands.f.getqujing.net:31680'
 }
+
+# OPAM configuration
+. /Users/geekerzp/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+# infer
+export PATH=`pwd`/infer/infer/bin:$PATH
+
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "/Users/geekerzp/.gvm/bin/gvm-init.sh" ]] && source "/Users/geekerzp/.gvm/bin/gvm-init.sh"
+
+# pyenv
+eval "$(pyenv init -)"
